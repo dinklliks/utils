@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicto Article Builder</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Predicto Article Builder</h1>
+    <form id="form">
+        <label for="keyword">Keyword:</label>
+        <input type="text" id="keyword" name="keyword" placeholder="Enter keyword" required>
+
+        <label for="nativeKeyword">Native keyword:</label>
+        <input type="text" id="nativeKeyword" name="nativeKeyword" placeholder="Enter native keyword" required>
+
+        <label for="language">Language:</label>
+        <input type="text" id="language" name="language" placeholder="Enter language" required>
+
+        <label for="vertical">Vertical:</label>
+        <input type="text" id="vertical" name="vertical" placeholder="Enter vertical" required>
+
+        <label for="suggestedKeywords">Suggested keywords:</label>
+        <input type="text" id="suggestedKeywords" name="suggestedKeywords" placeholder="Enter suggested keywords" required>
+
+        <label for="articleHeadline">Article headline:</label>
+        <input type="text" id="articleHeadline" name="articleHeadline" placeholder="Enter article headline" required>
+
+        <label for="articleExcerpt">Article excerpt:</label>
+        <textarea id="articleExcerpt" name="articleExcerpt" placeholder="Enter article excerpt" required></textarea>
+
+        <label for="articleContent">Article content:</label>
+        <textarea id="articleContent" name="articleContent" placeholder="Enter article content" required></textarea>
+
+        <button type="submit">Generate URL & Copy to clipboard</button>
+        <button type="reset" class="reset">Reset Form</button>
+    </form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
