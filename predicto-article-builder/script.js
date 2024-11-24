@@ -31,6 +31,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
 
     console.log(camelToSnakeCase(data));
     uploadArticle(data);
+    //test
 
     // // Display the URL
     // const resultElement = document.getElementById('generatedUrl');
