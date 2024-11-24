@@ -55,7 +55,7 @@ a {
     text-decoration: none;
 }
 
-button:hover {
+button:hover, .button:hover {
     background: #0056b3;
 }
 
@@ -84,4 +84,34 @@ select {
     border-radius: 4px;
     background-color: #fff;
     color: #555;
+}
+
+img.left-arrow {
+    rotate: -90deg;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 4px;
+
+    &:hover {
+        background: rgba(209, 223, 238, 0.34);
+    }
+}
+
+.flex-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.utils-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+
+    & > * {
+        width: 300px;
+    }
 }
