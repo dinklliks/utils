@@ -41,7 +41,10 @@ document.getElementById('form').addEventListener('submit', function(event) {
 });
 
 const uploadArticle = async (data) => {
+    const submitButton = document.getElementById('submitButton');
     try {
+        document.body.style.cursor = 'progress';
+        submitButton.setAttribute('disabled', '');
         const response = await fetch(POST_ARTICLE_URL, {
             method: 'POST',
             headers: {
@@ -65,6 +68,9 @@ const uploadArticle = async (data) => {
         console.error('Error:', error);
         alert('An error occurred.');
     }
+
+    submitButton.removeAttribute('disabled');
+    document.body.style.cursor = 'unset';
 }
 
 

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predicto Article Builder</title>
     <link rel="stylesheet" href="../styles.css">
@@ -23,7 +24,7 @@
         <input type="text" id="vertical" name="vertical" placeholder="Enter vertical" required>
 
         <label for="suggestedKeywords">Suggested keywords:</label>
-        <input type="text" id="suggestedKeywords" name="suggestedKeywords" placeholder="Enter suggested keywords" required>
+        <input type="text" id="suggestedKeywords" name="suggestedKeywords" placeholder="Enter suggested keywords">
 
         <label for="articleHeadline">Article headline:</label>
         <input type="text" id="articleHeadline" name="articleHeadline" placeholder="Enter article headline" required>
@@ -34,7 +35,7 @@
         <label for="articleContent">Article content:</label>
         <textarea id="articleContent" name="articleContent" placeholder="Enter article content" required></textarea>
 
-        <button type="submit">Generate URL & Copy to clipboard</button>
+        <button type="submit" id="submitButton">Upload Article</button>
         <button type="reset" class="reset">Reset Form</button>
     </form>
 </div>
