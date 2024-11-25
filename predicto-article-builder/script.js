@@ -1,5 +1,5 @@
-const POST_ARTICLE_URL = 'https://dashboard-server.predicto.ai/api/keywords/upload';
-const ACCESS_TOKEN = 'EXAMPLE';
+const POST_ARTICLE_URL = 'https://dashboard-server.predicto.ai/api/search/keywords/upload/';
+const ACCESS_TOKEN = 'tC9iwah7XS3xDqkpfq4Fyz1ZXsy6ObEeccAL9JUOCY6xO3zOOiGYbqy2oqqd9EJ8';
 
 document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -15,51 +15,29 @@ document.getElementById('form').addEventListener('submit', function(event) {
         articleContent: getFormValue('articleContent'),
     };
 
-    // if (
-    //     !keyword ||
-    //     !nativeKeyword ||
-    //     !language ||
-    //     !vertical ||
-    //     !suggestedKeywords ||
-    //     !articleHeadline ||
-    //     !articleExcerpt ||
-    //     !articleContent
-    // ) {
-    //     alert('Please fill out all required fields!');
-    //     return;
-    // }
-
-    console.log(camelToSnakeCase(data));
-    uploadArticle(data);
-
-    // // Display the URL
-    // const resultElement = document.getElementById('generatedUrl');
-    // const resultContainer = document.getElementById('result');
-    // resultElement.textContent = url;
-    // resultElement.style.display = 'block';
-    // resultContainer.style.display = 'block';
+    uploadArticle(camelToSnakeCase(data));
 });
 
 const uploadArticle = async (data) => {
     const submitButton = document.getElementById('submitButton');
     try {
+        const formData = new FormData();
+        const file = new Blob([JSON.stringify(data)], { type: 'application/json' });
+        formData.append('file', file, 'file.json');
         document.body.style.cursor = 'progress';
         submitButton.setAttribute('disabled', '');
         const response = await fetch(POST_ARTICLE_URL, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
                 'Authorization': ACCESS_TOKEN,
             },
-            body: JSON.stringify(data),
+            body: formData,
         });
 
         console.log('response', response);
 
         if (response.ok) {
-            const result = await response.json();
-            console.log('Success:', result);
-            alert('Form submitted successfully!');
+            showSnackbar();
         } else {
             console.error('Error:', response.statusText);
             alert('Failed to submit the form.');
@@ -116,4 +94,10 @@ const camelToSnakeCase = (obj) => {
         acc[snakeKey] = camelToSnakeCase(value); // Recursively process nested values
         return acc;
     }, {});
+}
+
+const showSnackbar = () => {
+    const snackbar = document.getElementById("snackbar");
+    snackbar.className = "show";
+    setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
 }
