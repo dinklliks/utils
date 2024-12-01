@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/x-icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Predicto URL Generator</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="flex-container">
+                <a href="../index.html">
+                    <img class="left-arrow" src="https://www.svgrepo.com/show/19400/up-arrow.svg" alt="">
+                </a>
+                <h1>Predicto URL Generator</h1>
+            </div>
+            <form id="urlForm">
+                <label for="articleId">Article ID:</label>
+                <input type="text" id="articleId" name="articleId" placeholder="Enter article id" required>
+
+                <label for="channelId">Channel ID:</label>
+                <input type="text" id="channelId" name="channelId" placeholder="Enter channel id" required>
+
+                <label for="styleId">Style ID:</label>
+                <input type="text" id="styleId" name="styleId" placeholder="Enter style id" required>
+
+                <label for="search">Search:</label>
+                <input type="text" id="search" name="search" placeholder="Enter search">
+
+                <label for="terms">Terms (seperated by new line):</label>
+                <textarea id="terms" name="terms" placeholder="Enter terms, separated by line break"></textarea>
+
+                <button type="submit">Generate URL & Copy to clipboard</button>
+                <button type="reset" class="reset">Reset Form</button>
+            </form>
+            <div id="result" style="display: none">
+                <h2>Generated URL:</h2>
+                <p id="generatedUrl"></p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

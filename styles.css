@@ -51,6 +51,15 @@ a.button, button {
     font-size: 16px;
 }
 
+a.button.purple, button.purple {
+    background-color: #9966CC;
+
+    &:hover {
+        background-color: #7c45b2;
+    }
+}
+
+
 *:disabled {
     opacity: 0.6;
 }
@@ -64,7 +73,7 @@ button:hover, .button:hover {
 }
 
 button.reset {
-    background: #e11616;
+    background: #DC143C;
 }
 
 button.reset:hover {
