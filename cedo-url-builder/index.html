@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/x-icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Predicto URL Generator</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="flex-container">
+                <a href="../index.html">
+                    <img class="left-arrow" src="https://www.svgrepo.com/show/19400/up-arrow.svg" alt="">
+                </a>
+                <h1>Cedo URL Generator</h1>
+            </div>
+            <form id="urlForm">
+                <label for="dsp">DSP:</label>
+                <select name="dsp" id="dsp">
+                    <option value="pinterest">Pinterest</option>
+                    <option value="snapchat">Snapchat</option>
+                </select>
+
+                <label for="domain">Domain:</label>
+                <input type="text" id="domain" name="domain" placeholder="Enter domain" required>
+
+                <label for="keywordLanguage">Keyword Language:</label>
+                <input list="languages" id="keywordLanguage" name="keywordLanguage" placeholder="Enter keyword language" required>
+                <datalist id="languages">
+                    <option>Arabic ar</option>
+                    <option>Korean ko</option>
+                    <option>Bengali bn</option>
+                    <option>Latvian lv</option>
+                    <option>Bulgarian bg</option>
+                    <option>Lithuanian lt</option>
+                    <option>Catalan ca</option>
+                    <option>Malay ms</option>
+                    <option>Chinese zh</option>
+                    <option>Malayalam ml</option>
+                    <option>Croatian hr</option>
+                    <option>Marathi mr</option>
+                    <option>Czech cs</option>
+                    <option>Norwegian no</option>
+                    <option>Danish da</option>
+                    <option>Persian fa</option>
+                    <option>Dutch nl</option>
+                    <option>Polish pl</option>
+                    <option>English en</option>
+                    <option>Portuguese pt</option>
+                    <option>Estonian et</option>
+                    <option>Punjabi pa</option>
+                    <option>Filipino tl</option>
+                    <option>Romanian ro</option>
+                    <option>Finnish fi</option>
+                    <option>Russian ru</option>
+                    <option>French fr</option>
+                    <option>Serbian sr</option>
+                    <option>German de</option>
+                    <option>Slovak sk</option>
+                    <option>Greek el</option>
+                    <option>Slovenian sl</option>
+                    <option>Gujarati gu</option>
+                    <option>Spanish es</option>
+                    <option>Hebrew iw</option>
+                    <option>Swedish sv</option>
+                    <option>Hindi hi</option>
+                    <option>Tamil ta</option>
+                    <option>Hungarian hu</option>
+                    <option>Telugu te</option>
+                    <option>Icelandic is</option>
+                    <option>Thai th</option>
+                    <option>Indonesian id</option>
+                    <option>Turkish tr</option>
+                    <option>Italian it</option>
+                    <option>Ukrainian uk</option>
+                    <option>Japanese ja</option>
+                    <option>Urdu ur</option>
+                    <option>Kanada kn</option>
+                    <option>Vietnamese vi</option>
+                </datalist>
+
+                <label for="adTitle">Ad Title:</label>
+                <input type="text" id="adTitle" name="adTitle" placeholder="Enter style id" required>
+
+                <label for="externalId">External ID:</label>
+                <input type="text" id="externalId" name="externalId" placeholder="Enter external id" required>
+
+                <label for="trackingField">Tracking Field:</label>
+                <input type="text" id="trackingField" name="trackingField" placeholder="Enter tracking field" required>
+
+                <label for="terms">Terms (seperated by new line):</label>
+                <textarea id="terms" name="terms" placeholder="Enter terms, separated by line break" required></textarea>
+
+                <button class="purple" type="submit">Generate URL & Copy to clipboard</button>
+                <button type="reset" class="reset">Reset Form</button>
+            </form>
+            <div id="result" style="display: none">
+                <h2>Generated URL:</h2>
+                <p id="generatedUrl"></p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
