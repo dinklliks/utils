@@ -41,6 +41,10 @@ textarea.big {
     height: 200px;
 }
 
+textarea.medium {
+    height: 100px;
+}
+
 a.button, button {
     padding: 10px;
     background: #007BFF;

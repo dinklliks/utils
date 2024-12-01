@@ -55,14 +55,12 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const dsp = document.getElementById('dsp').value.trim();
-    const externalId = document.getElementById('externalId').value.trim();
-    const trackingField = document.getElementById('trackingField').value.trim();
     const domain = document.getElementById('domain').value.trim();
     const keywordLanguage = document.getElementById('keywordLanguage').value.trim();
     const adTitle = document.getElementById('adTitle').value.trim();
     const terms = document.getElementById('terms').value.trim();
 
-    if (!domain || !keywordLanguage || !adTitle || !dsp || !externalId || !trackingField) {
+    if (!domain || !keywordLanguage || !adTitle || !dsp) {
         alert('Please fill out all required fields!');
         return;
     }
@@ -74,18 +72,16 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
 
     // Generate the URL
     const baseUrl = domain.startsWith('http') ? domain : `https://${domain}`;
-    const defaultParams = '';
+    const defaultParams = `sub1={external_id}&sub2={trackingField3}`;
     let url = `${baseUrl}/?${defaultParams}`;
 
-    url += `&kwhl=${encodeURIComponent(keywordLanguage)}`;
+    url += `&kwhl=${encodeURIComponent(keywordLanguage.split(' ')[1])}`;
     url += `&network=${encodeURIComponent(dsp)}`;
     url += `&adtitle=${encodeURIComponent(adTitle)}`;
-    url += `&sub1=${encodeURIComponent(externalId)}`;
-    url += `&sub2=${encodeURIComponent(trackingField)}`;
 
     if (terms) {
         const splitTerms = terms.split('\n');
-        splitTerms.forEach((term, index) => url += `&kw${index+1}=${encodeURIComponent(term)}`);
+        splitTerms.forEach((term, index) => url += `&kw${index+1}=${encodeURIComponent(term.trim())}`);
     }
 
     navigator.clipboard.writeText(url);
