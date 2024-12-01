@@ -72,7 +72,8 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
 
     // Generate the URL
     const baseUrl = domain.startsWith('http') ? domain : `https://${domain}`;
-    const defaultParams = `sub1={external_id}&sub2={trackingField3}`;
+    const trackingField = dsp === 'pinterest' ? 'trackingField1' : 'trackingField2'
+    const defaultParams = `sub1={external_id}&sub2={${trackingField}}`;
     let url = `${baseUrl}/?${defaultParams}`;
 
     url += `&kwhl=${encodeURIComponent(keywordLanguage.split(' ')[1])}`;
