@@ -17,28 +17,45 @@
     </div>
     <form id="form">
         <label for="keyword">Keyword:</label>
-        <input type="text" id="keyword" name="keyword" placeholder="Enter keyword" required>
+        <input type="text" id="keyword" name="keyword" placeholder="The main keyword in English." required>
 
         <label for="nativeKeyword">Native keyword:</label>
-        <input type="text" id="nativeKeyword" name="nativeKeyword" placeholder="Enter native keyword" required>
+        <input type="text" id="nativeKeyword" name="nativeKeyword" placeholder="The keyword translated into the specified language." required>
 
         <label for="language">Language:</label>
-        <input type="text" id="language" name="language" placeholder="Enter language" required>
+        <input type="text" id="language" name="language" placeholder="The language of the native keyword (&#34;english&#34; or other languages)." required>
 
         <label for="vertical">Vertical:</label>
-        <input type="text" id="vertical" name="vertical" placeholder="Enter vertical" required>
+        <input list="verticals" id="vertical" name="vertical" placeholder="Start typing..." required>
+        <datalist id="verticals">
+            <option>Health</option>
+            <option>Employment</option>
+            <option>Housing</option>
+            <option>Education</option>
+            <option>Finance</option>
+            <option>Vehicles</option>
+            <option>Telecom</option>
+            <option>Electronics</option>
+            <option>Travel</option>
+            <option>Pets</option>
+            <option>Services</option>
+            <option>Tech</option>
+            <option>Advertisement</option>
+            <option>Beauty</option>
+            <option>Shopping</option>
+        </datalist>
 
         <label for="suggestedKeywords">Suggested keywords:</label>
-        <input type="text" id="suggestedKeywords" name="suggestedKeywords" placeholder="Enter suggested keywords">
+        <input type="text" id="suggestedKeywords" name="suggestedKeywords" placeholder="Related terms for the main keyword, separated by commas.">
 
         <label for="articleHeadline">Article headline:</label>
-        <input type="text" id="articleHeadline" name="articleHeadline" placeholder="Enter article headline" required>
+        <input type="text" id="articleHeadline" name="articleHeadline" placeholder="Headline of the associated article." required>
 
         <label for="articleExcerpt">Article excerpt:</label>
-        <textarea id="articleExcerpt" name="articleExcerpt" class="big" placeholder="Enter article excerpt" required></textarea>
+        <textarea id="articleExcerpt" name="articleExcerpt" class="big" placeholder="A short description of the article" required></textarea>
 
         <label for="articleContent">Article content:</label>
-        <textarea id="articleContent" name="articleContent" class="big" placeholder="Enter article content" required></textarea>
+        <textarea id="articleContent" name="articleContent" class="big" placeholder="Full content of the article, formatted in HTML." required></textarea>
 
         <button type="submit" id="submitButton">Upload Article</button>
         <button type="reset" class="reset">Reset Form</button>
