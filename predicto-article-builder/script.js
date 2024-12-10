@@ -4,10 +4,17 @@ const ACCESS_TOKEN = 'tC9iwah7XS3xDqkpfq4Fyz1ZXsy6ObEeccAL9JUOCY6xO3zOOiGYbqy2oq
 document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault();
 
+    const language = getFormValue('language');
+
+    if (language?.length < 4) {
+        alert(`Insert language name instead of language code. detected: ${language}`);
+        return;
+    }
+
     const data = {
         keyword: getFormValue('keyword'),
         nativeKeyword: getFormValue('nativeKeyword'),
-        language: getFormValue('language'),
+        language,
         vertical: getFormValue('vertical'),
         suggestedKeywords: getFormValue('suggestedKeywords'),
         articleHeadline: getFormValue('articleHeadline'),
@@ -15,7 +22,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
         articleContent: getFormValue('articleContent'),
     };
 
-    uploadArticle(camelToSnakeCase(data));
+    // uploadArticle(camelToSnakeCase(data));
 });
 
 const uploadArticle = async (data) => {
