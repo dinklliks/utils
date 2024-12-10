@@ -1,6 +1,20 @@
 const POST_ARTICLE_URL = 'https://dashboard-server.predicto.ai/api/search/keywords/upload/';
 const ACCESS_TOKEN = 'tC9iwah7XS3xDqkpfq4Fyz1ZXsy6ObEeccAL9JUOCY6xO3zOOiGYbqy2oqqd9EJ8';
 
+const submitButton = document.getElementById('submitButton');
+submitButton.style.cursor = 'not-allowed';
+
+document.getElementById('language').addEventListener('input', (event) => {
+    const value = event.target?.value;
+    if (value?.length > 3) {
+        submitButton.style.cursor = 'unset';
+        submitButton.removeAttribute('disabled');
+    } else {
+        submitButton.style.cursor = 'not-allowed';
+        submitButton.setAttribute('disabled', 'disabled');
+    }
+});
+
 document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -22,11 +36,10 @@ document.getElementById('form').addEventListener('submit', function(event) {
         articleContent: getFormValue('articleContent'),
     };
 
-    // uploadArticle(camelToSnakeCase(data));
+    uploadArticle(camelToSnakeCase(data));
 });
 
 const uploadArticle = async (data) => {
-    const submitButton = document.getElementById('submitButton');
     try {
         const formData = new FormData();
         const file = new Blob([JSON.stringify(data)], { type: 'application/json' });
