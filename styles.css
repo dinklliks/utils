@@ -63,6 +63,14 @@ a.button.purple, button.purple {
     }
 }
 
+a.button.cyan, button.cyan {
+    background-color: #1cb3a6;
+
+    &:hover {
+        background-color: #18988d;
+    }
+}
+
 
 *:disabled {
     opacity: 0.6;
