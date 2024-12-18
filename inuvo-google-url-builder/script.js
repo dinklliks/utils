@@ -1,9 +1,15 @@
+const encodeSpaces = (text) => {
+    return text.split(' ').join(encodeURIComponent(' '));
+};
+
 document.getElementById('urlForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const campaignId = document.getElementById('campaignId').value.trim();
     const adTitle = document.getElementById('adTitle').value.trim();
     const terms = document.getElementById('terms').value.trim();
+    const encodeTerms = document.getElementById('encodeTerms').checked;
+    const encodeAdTitle = document.getElementById('encodeAdTitle').checked;
 
     if (!campaignId || !adTitle || !terms) {
         alert('Please fill out all required fields!');
@@ -12,10 +18,16 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
 
     let url = `{lpurl}?camp_id=${campaignId}&gclid={gclid}&placement={placement}&serplayout=slimrounded`;
 
-    url += `&utm_content=${encodeURIComponent(adTitle)}`;
+    const encodedAdTitle = encodeAdTitle ? encodeURIComponent(adTitle) : encodeSpaces(adTitle);
+    url += `&utm_content=${encodedAdTitle}`;
 
     if (terms) {
-        const splitTerms = terms.split('\n').map(encodeURIComponent);
+        let splitTerms = terms.split('\n').map((term) => term.trim());
+        if (encodeTerms) {
+            splitTerms = splitTerms.map(encodeURIComponent);
+        } else {
+            splitTerms = splitTerms.map(encodeSpaces);
+        }
         url += `&utm_term=${splitTerms.join(',')}`
         // splitTerms.forEach((term, index) => url += `&kw${index+1}=${encodeURIComponent(term.trim())}`);
     }
