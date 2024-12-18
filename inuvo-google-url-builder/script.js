@@ -8,8 +8,10 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
     const campaignId = document.getElementById('campaignId').value.trim();
     const adTitle = document.getElementById('adTitle').value.trim();
     const terms = document.getElementById('terms').value.trim();
-    const encodeTerms = document.getElementById('encodeTerms').checked;
-    const encodeAdTitle = document.getElementById('encodeAdTitle').checked;
+    // const encodeTerms = document.getElementById('encodeTerms').checked;
+    // const encodeAdTitle = document.getElementById('encodeAdTitle').checked;
+    const encodeTerms = true;
+    const encodeAdTitle = true;
 
     if (!campaignId || !adTitle || !terms) {
         alert('Please fill out all required fields!');
