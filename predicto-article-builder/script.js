@@ -1,5 +1,6 @@
 const POST_ARTICLE_URL = 'https://dashboard-server.predicto.ai/api/search/keywords/upload/';
 const ACCESS_TOKEN = 'tC9iwah7XS3xDqkpfq4Fyz1ZXsy6ObEeccAL9JUOCY6xO3zOOiGYbqy2oqqd9EJ8';
+const confirmDialog = document.getElementById('confirmDialog');
 
 const submitButton = document.getElementById('submitButton');
 submitButton.style.cursor = 'not-allowed';
@@ -17,6 +18,17 @@ document.getElementById('language').addEventListener('input', (event) => {
 
 document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault();
+    confirmDialog.showModal();
+});
+
+document.getElementById('cancelButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    confirmDialog.close();
+});
+
+document.getElementById('confirmButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    confirmDialog.close();
 
     const language = getFormValue('language');
 

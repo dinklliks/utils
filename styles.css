@@ -88,11 +88,11 @@ button:hover, .button:hover {
     background: #0056b3;
 }
 
-button.reset {
+button.red {
     background: #DC143C;
 }
 
-button.reset:hover {
+button.red:hover {
     background: #b10202;
 }
 
@@ -143,6 +143,29 @@ img.left-arrow {
     & > * {
         width: 300px;
     }
+}
+
+dialog form {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+dialog .list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+dialog .buttons {
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+}
+
+dialog .buttons button {
+    flex-grow: 1;
 }
 
 /* Snackbar */

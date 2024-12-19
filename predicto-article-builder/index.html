@@ -73,10 +73,25 @@
 </ul>
 " required></textarea>
         <button type="submit" id="submitButton" disabled>Upload Article</button>
-        <button type="reset" class="reset">Reset Form</button>
+        <button type="reset" class="red">Reset Form</button>
     </form>
 </div>
-<script src="script.js"></script>
 <div id="snackbar">Article Uploaded Successfully</div>
+<dialog id="confirmDialog">
+    <form method="dialog">
+        <h3>Are you sure you want to submit?</h3>
+        <div class="list">
+            <div>1. Make sure that the Keyword is in <strong>english</strong>, and the <strong>native keyword</strong> is in the <strong>target language</strong></div>
+            <div>2. Make sure you've added <strong>3 links</strong></div>
+            <div>3. Make sre you've added links which are <strong>related to the target GEO</strong></div>
+        </div>
+        <div>Not every KW can be translated and you have to be very careful - are there grants for disabled children in each of the countries with these languages / clinical trails for smokers / home improvement grants for adults. You have to make sure that it even exists and if it does then give specific relevant links</div>
+        <div class="buttons">
+            <button id="cancelButton" class="red">cancel</button>
+            <button id="confirmButton">confirm</button>
+        </div>
+    </form>
+</dialog>
+<script src="script.js"></script>
 </body>
 </html>
