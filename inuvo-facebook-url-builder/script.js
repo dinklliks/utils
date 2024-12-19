@@ -17,7 +17,7 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
         return;
     }
 
-    let url = `https://jumpsprints.com/article/${articleId.toUpperCase()}/?camp_id=${campaignId}&serplayout=slimrounded`;
+    let url = `https://jumpsprints.com/article/${articleId.toUpperCase()}/?camp_id=${campaignId}`;
 
     const encodedAdTitle = encodeAdTitle ? encodeURIComponent(adTitle) : encodeSpaces(adTitle);
     url += `&utm_content=${encodedAdTitle}`;
