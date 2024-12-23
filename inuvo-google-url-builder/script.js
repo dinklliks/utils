@@ -24,7 +24,7 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
     url += `&utm_content=${encodedAdTitle}`;
 
     if (terms) {
-        let splitTerms = terms.split('\n').map((term) => term.trim());
+        let splitTerms = terms.split('\n').map(term => term.trim().replace(/,+$/, '').trim());
         if (encodeTerms) {
             splitTerms = splitTerms.map(encodeURIComponent);
         } else {

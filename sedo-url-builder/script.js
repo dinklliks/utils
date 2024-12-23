@@ -81,8 +81,8 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
     url += `&adtitle=${encodeURIComponent(adTitle)}`;
 
     if (terms) {
-        const splitTerms = terms.split('\n');
-        splitTerms.forEach((term, index) => url += `&kw${index+1}=${encodeURIComponent(term.trim())}`);
+        const splitTerms = terms.split('\n').map(term => term.trim().replace(/,+$/, '').trim());
+        splitTerms.forEach((term, index) => url += `&kw${index+1}=${encodeURIComponent(term)}`);
     }
 
     navigator.clipboard.writeText(url);

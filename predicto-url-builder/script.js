@@ -51,7 +51,7 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
     }
 
     if (terms) {
-        const splitTerms = terms.split('\n');
+        const splitTerms = terms.split('\n').map(term => term.trim().replace(/,+$/, '').trim());
         url+= `&terms=${splitTerms.map(encodeURIComponent).join(',')}`;
     }
 
