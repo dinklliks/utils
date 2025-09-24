@@ -1,5 +1,5 @@
 const POST_ARTICLE_URL = 'https://dashboard-server.predicto.ai/api/search/keywords/upload/';
-const ACCESS_TOKEN = 'tC9iwah7XS3xDqkpfq4Fyz1ZXsy6ObEeccAL9JUOCY6xO3zOOiGYbqy2oqqd9EJ8';
+const ACCESS_TOKEN = 'VuZx1fXX4VS7DJsU462W1YuhI1aUNO';
 const confirmDialog = document.getElementById('confirmDialog');
 
 const submitButton = document.getElementById('submitButton');
