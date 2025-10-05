@@ -1,0 +1,5 @@
+<Response>
+    <Say voice="alice">
+        Alert! Your campaign spend exceeded $1000. Please check immediately.
+    </Say>
+</Response>
